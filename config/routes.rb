@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   end
 
   resources :robots, only: %i[index show] do
+    collection do
+      get 'search'
+    end
     resources :bookings, only: %i[new create]
   end
 end
