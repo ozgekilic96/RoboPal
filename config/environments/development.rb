@@ -59,7 +59,7 @@ Rails.application.configure do
   # Suppress logger output for asset requests.
   config.assets.quiet = true
 
-  config.action_mailer.default_url_options = { host: 'https://robopal-728743dc042a.herokuapp.com/' }
+  config.action_mailer.default_url_options = { host: 'robopal-728743dc042a.herokuapp.com' }
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
 
