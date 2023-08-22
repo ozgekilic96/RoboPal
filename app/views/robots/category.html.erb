@@ -1,0 +1,9 @@
+<h1><%= @category.capitalize %> Robots</h1>
+
+<% if @robots.present? %>
+  <ul>
+    <% @robots.each do |robot| %>
+      <li><%= link_to robot.robot_name, robot_path(robot) %></li>
+    <% end %>
+  </ul>
+<% end %>
