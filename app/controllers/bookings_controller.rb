@@ -1,22 +1,31 @@
 class BookingsController < ApplicationController
-  before_action :set_bookmark, only: :destroy
+  before_action :set_booking, only: :destroy
 
   def show
     @booking = Booking.find(params[:id])
   end
 
   def new
+    @robot = Robot.find(params[:robot_id])
     @booking = Booking.new
   end
 
   def create
-    @booking = Booking.new(booking_params)
-    @booking
+    @robot = Robot.find(params[:robot_id])
+    @booking = @robot.bookings.build(booking_params)
+    @booking.user = current_user
+
+    if @booking.save
+      redirect_to robot_path(@robot), notice: 'Booking was successfully created.'
+    else
+      render :new
+    end
   end
 
   def destroy
-    @booking.destroylist
-    redirect_to robots_path
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to user_path(current_user), notice: "Booking was successfully deleted."
   end
 
   private

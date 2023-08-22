@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
-    @bookings = @user.bookings
+    @bookings = Booking.joins(:robot).where(robot: { user_id: @user.id })
     @robots = @user.robots
   end
 end
