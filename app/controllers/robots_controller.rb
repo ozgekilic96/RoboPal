@@ -26,6 +26,7 @@ class RobotsController < ApplicationController
   end
 
   def show
+    @user = current_user
     @robot = Robot.find(params[:id])
   end
 
