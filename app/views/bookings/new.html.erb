@@ -1,0 +1,12 @@
+<div class="text-center">
+  <h1>Booking Page</h1>
+  <div class="d-flex justify-content-center">
+    <div class="col-lg-4">
+      <%= simple_form_for ([@robot, @booking]) do |f| %>
+        <%= f.input :start_date, as: :string, input_html: { data: { controller: "datepicker" } } %>
+        <%= f.input :return_date, as: :string, input_html: { data: { controller: "datepicker" } } %>
+        <%= f.button :submit, class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+</div>

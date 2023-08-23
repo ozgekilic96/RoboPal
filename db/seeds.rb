@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
 require 'faker'
 
 Faker::Config.locale = 'de'
@@ -20,6 +21,7 @@ Faker::Config.locale = 'de'
     address: Faker::Address.street_address
   )
 end
+
 
 Robot.create!(
   robot_name: "Mega Man",
