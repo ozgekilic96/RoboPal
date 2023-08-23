@@ -1,8 +1,22 @@
-<div class="text-center mt-5">
-  <h2><%= @robot.robot_name %></h2>
-  <h5>Description: <%= @robot.description %></h5>
-  <h5>Price: <%= @robot.price %>€</h5>
-  <%= link_to "Create Booking", new_robot_booking_path(@robot) %>
-  <%= link_to "Categories Page", root_path %>
-  <%= link_to "This Category Page", category_robots_path(@robot.category) %>
+<%= render "shared/navbar" %>
+<div class="background-style">
+  <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
+    <div class="robot-card text-center">
+      <div class="card-container w-400px">
+        <div class="card ">
+          <h2 class="robot-name"><%= @robot.robot_name %></h2>
+          <%= image_tag(@robot.robot_pictures, style: "width:400; height:400px") %>
+          <p>
+            <strong>Description:</strong> <%= @robot.description %>
+          </p>
+          <p>
+            <strong>Price:</strong> <%= number_to_currency(@robot.price, unit: "€") %>
+          </p>
+          <div class="card-footer">
+            <%= link_to "Create Booking", new_robot_booking_path(@robot), class: "btn btn-primary btn-create-booking" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
