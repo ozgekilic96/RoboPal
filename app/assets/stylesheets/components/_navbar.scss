@@ -1,15 +1,44 @@
+/* Update this CSS in your stylesheet */
+.avatar {
+  margin-left: 10px;
+}
+
+/* Add this CSS to your stylesheet */
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: rgba(4, 4, 4, 0.86);
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
-}
 .input-width {
   width: 350px;
+}
+
+.logo-image {
+  width: 120px;
+}
+
+.nav-item-active {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-link.button {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-link.button:hover {
+  background-color: #4f4e4b; /* Darken the background color on hover */
 }

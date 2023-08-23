@@ -1,0 +1,66 @@
+@import "alert";
+@import "avatar";
+@import "form_legend_clear";
+@import "navbar";
+@import "bootstrap"; // Import Bootstrap if needed
+/* app/assets/stylesheets/application.scss */
+
+
+/* Add more styles as needed */
+@import "category";
+/* Add more imports if needed */
+
+
+.background-img {
+  background-image: url('human.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  position: relative;
+}
+/* app/assets/stylesheets/category.scss */
+
+/* Style for card elements */
+.card {
+  width: 265px;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: white;
+  margin-bottom: 20px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for card image */
+.card-img-left {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+/* Style for card title */
+.card-title {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  color: black;
+}
+
+/* Style for card description */
+.card-text {
+  font-size: 1rem;
+  color: #333;
+  margin-top: 0.5rem;
+}
+
+/* Style for price */
+.card-price {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ff5733;
+  margin-top: 0.5rem;
+}
+
+/* Hover effect for cards */
+.card:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease;
+}

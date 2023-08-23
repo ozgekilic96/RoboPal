@@ -10,10 +10,29 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+/* app/assets/stylesheets/application.scss */
 
-body {
+/* General styles for all pages */
 
-  background-image: url('white.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
+/* Specific styles for category pages */
+body.category-page {
+  /* Add any shared styles for category pages here */
+
+  .background-img {
+    /* Your background image styles here */
+    background-image: url('your-background-image.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .Title h1 {
+    /* Your title styles here */
+    font-size: 36px;
+    color: black;
+  }
+
+  /* ... More specific styles for category pages */
+
+  /* Include any other styles you want for category pages */
 }
