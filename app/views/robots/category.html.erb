@@ -1,7 +1,7 @@
 
 <%= render "shared/navbar" %>
 
-<h1 class="text-center"><%= @category.capitalize %> Robots</h1>
+<h1 class="text-center mt-5"><%= @category.capitalize %> Robots</h1>
 
 <div class="d-flex justify-content-between">
   <div class="row m-5" style="width: 66.66%;">
@@ -9,8 +9,8 @@
       <% @robots.each do |robot| %>
         <div class="col-md-6 mb-4">
           <div class="card">
-           <%= image_tag(robot.robot_pictures, style: "width:265px; height:400px")%>
-            <div class="card-body">
+           <%= image_tag(robot.robot_pictures, style: "width:400px; height:400px")%>
+            <div class="card-body w-20 ">
               <h5 class="card-title"><%= link_to robot.robot_name, robot_path(robot), class: "text-decoration-none" %></h5>
 
             </div>
