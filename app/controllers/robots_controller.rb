@@ -12,6 +12,7 @@ class RobotsController < ApplicationController
   end
 
   def category
+    @user = current_user
     @category = params[:category]
     @robots = Robot.where('category LIKE ?', "%#{@category}%")
     @users_with_matching_robots = User.joins(:robots).merge(@robots).distinct
