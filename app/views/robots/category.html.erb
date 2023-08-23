@@ -9,6 +9,10 @@
       <% @robots.each do |robot| %>
         <div class="col-md-4 mb-4">
           <div class="card">
+           <%= image_tag(robot.robot_pictures, style: "width:265px; height:400px")%>
+           <%= robot.robot_name %>
+            <%= robot.description %>
+
             <div class="card-body">
               <h5 class="card-title"><%= link_to robot.robot_name, robot_path(robot), class: "text-decoration-none" %></h5>
 

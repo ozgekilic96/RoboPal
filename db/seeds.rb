@@ -22,13 +22,21 @@ Faker::Config.locale = 'de'
   )
 end
 
+User.create!(
+  first_name: "ozge",
+  last_name: "kilic",
+  email: "ozgeklc096@gmail.com",
+  password: "123456",
+  address: Faker::Address.street_address
+)
+
 
 Robot.create!(
   robot_name: "Mega Man",
   category: "home",
   description: "social interaction, menial home tasks, organizer",
   price: 50,
-  robot_pictures: "app/assets/images/mega_man.jpg.webp",
+  robot_pictures: "mega_man.jpg.webp",
   user_id: 2
 )
 Robot.create!(
@@ -36,7 +44,7 @@ Robot.create!(
   category: "home",
   description: "dog care, play buddie, walker",
   price: 50,
-  robot_pictures: "app/assets/images/doogie_man.jpg",
+  robot_pictures: "doogie_man.jpg",
   user_id: 2
 )
 Robot.create!(
@@ -44,7 +52,7 @@ Robot.create!(
   category: "home",
   description: "social interaction, Child care",
   price: 50,
-  robot_pictures: "app/assets/images/famili_man.jpg",
+  robot_pictures: "famili_man.jpg",
   user_id: 4
 )
 Robot.create!(
@@ -52,7 +60,7 @@ Robot.create!(
   category: "home",
   description: "home cooking, 10000 recipies",
   price: 50,
-  robot_pictures: "app/assets/images/cook_man.jpg",
+  robot_pictures: "cook_man.jpg",
   user_id: 4
 )
 Robot.create!(
@@ -60,7 +68,7 @@ Robot.create!(
   category: "home",
   description: "floor cleaning, all floor types",
   price: 50,
-  robot_pictures: "app/assets/images/floor_man.jpg",
+  robot_pictures: "floor_man.jpg",
   user_id: 2
 )
 Robot.create!(
@@ -68,7 +76,7 @@ Robot.create!(
   category: "work",
   description: "learning, exam prep all levels",
   price: 50,
-  robot_pictures: "app/assets/images/study_man.jpg",
+  robot_pictures: "study.man.jpg",
   user_id: 7
 )
 Robot.create!(
@@ -76,7 +84,7 @@ Robot.create!(
   category: "work",
   description: "Heavy lifting, max 300kg",
   price: 75,
-  robot_pictures: "app/assets/images/guts_man.jpg.webp",
+  robot_pictures: "guts_man.jpg.webp",
   user_id: 9
 )
 Robot.create!(
@@ -84,7 +92,7 @@ Robot.create!(
   category: "work",
   description: "big chest touch screen, shows custom menu options for food/drinks",
   price: 75,
-  robot_pictures: "app/assets/images/menu_man.jpg",
+  robot_pictures: "menu_man.jpg",
   user_id: 1
 )
 Robot.create!(
@@ -92,7 +100,7 @@ Robot.create!(
   category: "work",
   description: "garden care taker",
   price: 75,
-  robot_pictures: "app/assets/images/ground_man.jpg",
+  robot_pictures: "ground_man.jpg",
   user_id: 6
 )
 Robot.create!(
@@ -100,7 +108,7 @@ Robot.create!(
   category: "work",
   description: "home or industrial electrical wiring",
   price: 75,
-  robot_pictures: "app/assets/images/elec_man.jpg",
+  robot_pictures: "elec_man.jpg",
   user_id: 6
 )
 Robot.create!(
@@ -108,7 +116,7 @@ Robot.create!(
   category: "fun",
   description: "for private events, dolby speaker, music powered by spotify",
   price: 30,
-  robot_pictures: "app/assets/images/disco_man.jpg",
+  robot_pictures: "disco_man.jpg",
   user_id: 8
 )
 Robot.create!(
@@ -116,7 +124,7 @@ Robot.create!(
   category: "fun",
   description: "for private social event, 50k song playlist",
   price: 30,
-  robot_pictures: "app/assets/images/karaoke_man.jpg",
+  robot_pictures: "karoke_man.png",
   user_id: 8
 )
 Robot.create!(
@@ -124,7 +132,7 @@ Robot.create!(
   category: "fun",
   description: "keeps drinks cool, serves drinks, 60 liter storage",
   price: 30,
-  robot_pictures: "app/assets/images/chill_man.jpg",
+  robot_pictures: "chill_man.jpg",
   user_id: 10
 )
 Robot.create!(
@@ -132,7 +140,7 @@ Robot.create!(
   category: "fun",
   description: "for concerts or parties, smoke cloud also in colors with laser lights",
   price: 30,
-  robot_pictures: "app/assets/images/cloud_man.png",
+  robot_pictures: "cloud_man.png",
   user_id: 10
 )
 Robot.create!(
@@ -140,6 +148,6 @@ Robot.create!(
   category: "fun",
   description: "holds a variety of sports equiptment and helps with training 1v1",
   price: 30,
-  robot_pictures: "app/assets/images/sports_man.jpg",
+  robot_pictures: "sports_man.jpg",
   user_id: 5
 )
