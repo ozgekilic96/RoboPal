@@ -19,7 +19,7 @@ class Booking < ApplicationRecord
 
   def no_conflicting_bookings
     conflicts = Booking.where(robot_id: robot_id)
-                       .where.not(id: id) # Exclude the current booking (if editing)
+                       .where.not(id: id)
                        .where("(start_date, return_date) OVERLAPS (?, ?)", start_date, return_date)
 
     if conflicts.exists?
