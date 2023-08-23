@@ -1,33 +1,36 @@
 <%= render "shared/navbar" %>
 
-<div class="d-flex justify-content-center">
-  <div class="row justify-content-between align-items-center mt-5">
-    <div class="col-md-4">
+<div class="background-image">
+  <div class="tagline">
+    <h2>Robots that Care, Assist, and Transform Your Life.</h2>
+  </div>
+  <div class="robot-categories">
+    <div class="category">
       <%= link_to category_robots_path('home') do %>
-        <%= image_tag("clenanin.jpg", style: "width:400px; height:400px")%>
-        <div class="card bg-light text-center">
+        <%= image_tag("clenanin.jpg", style: "width:400px; height:400px") %>
+        <div class="category-card">
           <h3>HOME</h3>
-          <p>Book your home robots </p>
+          <p>Book your home robots</p>
         </div>
       <% end %>
     </div>
-    <div class="col-md-4">
+    <div class="category">
       <%= link_to category_robots_path('fun') do %>
-        <%= image_tag("party.jpg", style: "width:400px; height:400px")%>
-          <div class="card bg-light text-center">
-            <h3>FUN</h3>
-            <p>Book your fun robots </p>
-          </div>
+        <%= image_tag("party.jpg", style: "width:400px; height:400px") %>
+        <div class="category-card">
+          <h3>FUN</h3>
+          <p>Book your fun robots</p>
+        </div>
       <% end %>
     </div>
-    <div class="col-md-4">
+    <div class="category">
       <%= link_to category_robots_path('work') do %>
         <%= image_tag("menu.jpg", style: "width:400px; height:400px") %>
-        <div class="card bg-light text-center">
+        <div class="category-card">
           <h3>WORK</h3>
           <p>Book your work robots</p>
         </div>
       <% end %>
-      </div>
     </div>
+  </div>
 </div>
