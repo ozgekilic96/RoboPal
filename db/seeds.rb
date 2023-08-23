@@ -23,6 +23,14 @@ Faker::Config.locale = 'de'
 end
 
 User.create!(
+  first_name: "Giovane",
+  last_name: "Nery",
+  email: "giovane.nery@hotmail.com",
+  password: "123456",
+  address: Faker::Address.street_address
+)
+
+User.create!(
   first_name: "ozge",
   last_name: "kilic",
   email: "ozgeklc096@gmail.com",
