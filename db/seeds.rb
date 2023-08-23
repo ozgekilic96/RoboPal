@@ -6,6 +6,24 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+require 'faker'
+
+Faker::Config.locale = 'de'
+
+10.times do
+  first_name = Faker::Name.first_name
+  last_name = Faker::Name.last_name
+  email_name = "#{first_name.downcase}.#{last_name.downcase}"
+
+  User.create!(
+    first_name: first_name,
+    last_name: last_name,
+    email: "#{email_name}@example.com",
+    password: "123456",
+    address: Faker::Address.street_address
+  )
+end
+
 Robot.create!(
   robot_name: "Mega Man",
   category: "home",

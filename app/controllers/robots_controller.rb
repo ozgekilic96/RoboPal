@@ -14,6 +14,14 @@ class RobotsController < ApplicationController
   def category
     @category = params[:category]
     @robots = Robot.where('category LIKE ?', "%#{@category}%")
+    @users_with_matching_robots = User.joins(:robots).merge(@robots).distinct
+
+    @markers = @users_with_matching_robots.geocoded.map do |user|
+      {
+        lat: user.latitude,
+        lng: user.longitude
+      }
+    end
   end
 
   def show
