@@ -1,24 +1,25 @@
-
 <%= render "shared/navbar" %>
 
 <h1 class="text-center mt-5"><%= @category.capitalize %> Robots</h1>
 
 <div class="d-flex justify-content-between">
-  <div class="row m-5" style="width: 66.66%;">
-    <% if @robots.present? %>
-      <% @robots.each do |robot| %>
-        <div class="col-md-6 mb-4">
-          <div class="card">
-           <%= cl_image_tag(robot.robot_pictures, width:265, height:400, crop: :fill)%>
-            <div class="card-body">
-              <h5 class="card-title"><%= link_to robot.robot_name, robot_path(robot), class: "text-decoration-none" %></h5>
+  <div class="row m-5">
+    <% if @robots_in_category.present? %>
+      <% @robots_in_category.each do |robot| %>
+        <div class="col-md-4 mb-4">
+          <%= link_to robot_path(robot) do %>
+            <div class="card shadow-sm rounded" data-robot-name="<%= robot.robot_name %>">
+              <%= cl_image_tag(robot.robot_pictures, width: 200, height: 330, crop: :fill, class: "card-img-top") %>
+              <div class="text-center">
+                <h3><%= robot.robot_name %></h3>
+              </div>
             </div>
-          </div>
+          <% end %>
         </div>
       <% end %>
     <% end %>
   </div>
-  <div class="card" style="width: 33.33%;"
+  <div class="card" style="width: 40%; height: 800px;"
     data-controller="map"
     data-map-markers-value="<%= @markers.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
