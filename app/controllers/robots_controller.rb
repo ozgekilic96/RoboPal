@@ -2,6 +2,7 @@ class RobotsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
+    @user = current_user
     if params[:search]
       @robots = Robot.where('LOWER(robot_name) LIKE ?', "%#{params[:search].downcase}%")
                      .order('robot_name ASC')

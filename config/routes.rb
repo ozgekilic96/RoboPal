@@ -6,8 +6,9 @@ Rails.application.routes.draw do
 
   resources :users, only: %i[show] do
     resources :robots, only: %i[destroy]
-    resources :bookings, only: %i[index show destroy]
   end
+
+  resources :bookings, only: %i[destroy]
 
   resources :robots, only: %i[index show] do
     collection do

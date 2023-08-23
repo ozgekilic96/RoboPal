@@ -1,0 +1,8 @@
+<div class="text-center mt-5">
+  <h2><%= @robot.robot_name %></h2>
+  <h5>Description: <%= @robot.description %></h5>
+  <h5>Price: <%= @robot.price %>€</h5>
+  <%= link_to "Create Booking", new_robot_booking_path(@robot) %>
+  <%= link_to "Categories Page", root_path %>
+  <%= link_to "This Category Page", category_robots_path(@robot.category) %>
+</div>

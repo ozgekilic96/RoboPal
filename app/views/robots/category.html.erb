@@ -1,9 +1,11 @@
-<h1><%= @category.capitalize %> Robots</h1>
+<div class="text-center">
+  <h1><%= @category.capitalize %> Robots</h1>
 
-<% if @robots.present? %>
-  <ul>
-    <% @robots.each do |robot| %>
-      <li><%= link_to robot.robot_name, robot_path(robot) %></li>
-    <% end %>
-  </ul>
-<% end %>
+  <% if @robots.present? %>
+    <ul class="list-group list-group-flush">
+      <% @robots.each do |robot| %>
+        <li><%= link_to robot.robot_name, robot_path(robot), class: "text-decoration-none" %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
