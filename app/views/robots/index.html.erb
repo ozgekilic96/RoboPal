@@ -7,7 +7,7 @@
   <div class="robot-categories">
     <div class="category">
       <%= link_to category_robots_path('home') do %>
-        <%= image_tag("clenanin.jpg", style: "width:400px; height:400px") %>
+        <%= cl_image_tag("id0zlntlxyozmfkfnilw", width: 400, height: 400, crop: :fill) %>
         <div class="category-card">
           <h3>HOME</h3>
           <p>Book your home robots</p>
@@ -16,16 +16,16 @@
     </div>
     <div class="category">
       <%= link_to category_robots_path('fun') do %>
-        <%= image_tag("party.jpg", style: "width:400px; height:400px") %>
-        <div class="category-card">
-          <h3>FUN</h3>
-          <p>Book your fun robots</p>
-        </div>
+        <%= cl_image_tag("ybyeqkcgdmdhavu9jexh", width: 400, height: 400, crop: :fill) %>
+          <div class="category-card">
+            <h3>FUN</h3>
+            <p>Book your fun robots </p>
+          </div>
       <% end %>
     </div>
     <div class="category">
       <%= link_to category_robots_path('work') do %>
-        <%= image_tag("menu.jpg", style: "width:400px; height:400px") %>
+        <%= cl_image_tag("vhj07l4pkzgdlxnsak1m", width: 400, height: 400, crop: :fill) %>
         <div class="category-card">
           <h3>WORK</h3>
           <p>Book your work robots</p>
