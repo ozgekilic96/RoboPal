@@ -2,7 +2,7 @@
   <div class="d-flex justify-content-between container-fluid">
     <div>
       <%= link_to "#", class: "navbar-brand" do %>
-        <%= image_tag "https://cdn-icons-png.flaticon.com/512/5559/5559753.png" %>
+        <%= image_tag "Screenshot_1", class: "logo-image" %>
       <% end %>
     </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,7 +10,7 @@
     </button>
     <div class="justify-content-center">
       <%= form_tag robots_path, method: :get do %>
-        <%= text_field_tag :search, params[:search], placeholder: 'Search robot name', class: "input-width"%>
+        <%= text_field_tag :search, params[:search], placeholder: 'Search robot name', class: "input-width" %>
         <%= submit_tag 'Search' %>
       <% end %>
     </div>
@@ -20,8 +20,8 @@
        <li class="nav-item">
 
         <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "Home", robots_path %>
+          <li class="nav-item-active">
+            <%= link_to "Home", robots_path, class: "nav-item-active" %>
           </li>
           <li class="nav-item dropdown">
           <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -34,13 +34,12 @@
             </div>
           </li>
         <% else %>
-
-          <li class="nav-item">
-           <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Sign up",  new_user_registration_path, class: "nav-link" %>
-          </li>
+        <li class="nav-item">
+          <%= link_to "Login", new_user_session_path, class: "nav-link button" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Sign up", new_user_registration_path, class: "nav-link button" %>
+        </li>
 
         <% end %>
       </ul>
