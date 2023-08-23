@@ -4,32 +4,31 @@
 <div class="d-flex justify-content-center">
   <div class="row justify-content-between align-items-center mt-5">
     <div class="col-md-4">
-      <%= image_tag("clenanin.jpg", style: "width:265px; height:400px")%>
-      <div class="card bg-light text-center">
-        <h3>HOME</h3>
-        <p>Book your home robots </p>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <%= image_tag("party.jpg", style: "width:265px; height:400px")%>
+      <%= link_to category_robots_path('home') do %>
+        <%= image_tag("clenanin.jpg", style: "width:265px; height:400px")%>
         <div class="card bg-light text-center">
-          <h3>FUN</h3>
-          <p>Book your fun robots </p>
-        </div>
+          <h3>HOME</h3>
+          <p>Book your home robots </p>
+       </div>
+      <% end %>
     </div>
     <div class="col-md-4">
-      <%= image_tag("menu.jpg", style: "width:265px; height:400px")%>
-      <div class="card bg-light text-center">
-        <h3>WORK</h3>
-        <p>Book your work robots </p>
+      <%= link_to category_robots_path('fun') do %>
+        <%= image_tag("party.jpg", style: "width:265px; height:400px")%>
+          <div class="card bg-light text-center">
+            <h3>FUN</h3>
+            <p>Book your fun robots </p>
+          </div>
+      <% end %>
+    </div>
+    <div class="col-md-4">
+      <%= link_to category_robots_path('work') do %>
+        <%= image_tag("menu.jpg", style: "width:265px; height:400px") %>
+        <div class="card bg-light text-center">
+          <h3>WORK</h3>
+          <p>Book your work robots</p>
+        </div>
+      <% end %>
       </div>
     </div>
-  </div>
-</div>
-<div class="text-center">
-  <h1>Home Page</h1>
-  <%= link_to "Profile Page", user_path(@user) %>
-  <%= link_to "Home Robots", category_robots_path('home') %>
-  <%= link_to "Work Robots", category_robots_path('work') %>
-  <%= link_to "Fun Robots", category_robots_path('fun') %>
 </div>

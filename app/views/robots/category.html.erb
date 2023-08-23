@@ -1,11 +1,24 @@
-<div class="text-center">
-  <h1><%= @category.capitalize %> Robots</h1>
 
-  <% if @robots.present? %>
-    <ul class="list-group list-group-flush">
+<%= render "shared/navbar" %>
+
+<h1 class="text-center"><%= @category.capitalize %> Robots</h1>
+
+<div class="d-flex justify-content-between">
+  <div class="row" style="width: 66.66%;">
+    <% if @robots.present? %>
       <% @robots.each do |robot| %>
-        <li><%= link_to robot.robot_name, robot_path(robot), class: "text-decoration-none" %></li>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title"><%= link_to robot.robot_name, robot_path(robot), class: "text-decoration-none" %></h5>
+
+            </div>
+          </div>
+        </div>
       <% end %>
-    </ul>
-  <% end %>
+    <% end %>
+  </div>
+  <div class="card" style="width: 33.33%;">
+
+  </div>
 </div>
