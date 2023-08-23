@@ -29,13 +29,10 @@
       <% end %>
     </div>
   </div>
-
-  <div class="container">
-    <h3>My Bookings</h3>
-    <ul>
-      <% @bookings.each do |booking| %>
-        <li><%= link_to booking.robot.robot_name, robot_path(booking.robot) %> - <%= booking.start_date %> until <%= booking.return_date %></li>
-        <%= button_to "Delete this booking", booking_path(booking), method: :delete, class: "btn btn-danger text-light", data: { turbo_confirm: "Are you sure you want to delete this booking?" } %>
-      <% end %>
-    </ul>
-  </div>
+  <h3>My Bookings</h3>
+  <ul>
+    <% @user.bookings.each do |booking|%>
+      <%= booking.start_date %>
+    <% end %>
+  </ul>
+</div>
