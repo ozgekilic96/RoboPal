@@ -10,6 +10,11 @@ class RobotsController < ApplicationController
     end
   end
 
+  def category
+    @category = params[:category]
+    @robots = Robot.where('category LIKE ?', "%#{@category}%")
+  end
+
   def show
     @robot = Robot.find(params[:id])
   end
