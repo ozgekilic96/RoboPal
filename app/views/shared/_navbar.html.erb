@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="d-flex justify-content-between container-fluid">
     <div>
-      <%= link_to "#", class: "navbar-brand" do %>
+      <%= link_to root_path, class: "navbar-brand" do %>
         <%= image_tag "Screenshot_1", class: "logo-image" %>
       <% end %>
     </div>
@@ -21,7 +21,7 @@
 
         <% if user_signed_in? %>
           <li class="nav-item-active">
-            <%= link_to "Home", robots_path, class: "nav-item-active" %>
+            <%= link_to "Home", root_path, class: "nav-item-active" %>
           </li>
           <li class="nav-item dropdown">
           <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

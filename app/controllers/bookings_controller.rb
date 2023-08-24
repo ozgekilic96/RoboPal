@@ -6,17 +6,19 @@ class BookingsController < ApplicationController
   end
 
   def new
+    @user = current_user
     @robot = Robot.find(params[:robot_id])
     @booking = Booking.new
   end
 
   def create
+    @user = current_user
     @robot = Robot.find(params[:robot_id])
     @booking = @robot.bookings.build(booking_params)
     @booking.user = current_user
 
     if @booking.save
-      redirect_to robot_path(@robot), notice: 'Booking was successfully created.'
+      redirect_to user_path(@user), notice: 'Booking was successfully created.'
     else
       render :new
     end
