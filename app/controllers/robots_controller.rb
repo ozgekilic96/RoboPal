@@ -14,13 +14,19 @@ class RobotsController < ApplicationController
   def category
     @user = current_user
     @category = params[:category]
-    @robots = Robot.where('category LIKE ?', "%#{@category}%")
-    @users_with_matching_robots = User.joins(:robots).merge(@robots).distinct
+    @robots_in_category = Robot.where(category: @category)
+    @markers = []
 
-    @markers = @users_with_matching_robots.geocoded.map do |user|
-      {
+    @robots_in_category.each do |robot|
+      user = robot.user.geocoded_user
+      next unless user&.geocoded?
+
+      info_window_content = render_to_string(partial: "info_window", locals: { robot: robot })
+
+      @markers << {
         lat: user.latitude,
-        lng: user.longitude
+        lng: user.longitude,
+        info_window_html: info_window_content
       }
     end
   end

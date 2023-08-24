@@ -1,8 +1,4 @@
 <%= render "shared/navbar" %>
-
-
-
-
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-2">
@@ -20,7 +16,7 @@
       <% @robots.each do |robot| %>
         <div class="col-md-4">
           <div class="card mb-4">
-            <img src="<%= app/assets/images/disco_man.jpg%>" alt="<%=disco man %>" class="card-img-top">
+            <%= cl_image_tag(robot.robot_pictures, width:400, height:400, crop: :fill)%>
             <div class="card-body">
               <h5 class="card-title"><%= link_to robot.robot_name, robot_path(robot) %></h5>
             </div>
