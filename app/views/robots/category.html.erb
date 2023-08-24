@@ -1,15 +1,13 @@
 <%= render "shared/navbar" %>
-
 <h1 class="text-center mt-5"><%= @category.capitalize %> Robots</h1>
-
 <div class="d-flex justify-content-between">
   <div class="row m-5">
     <% if @robots_in_category.present? %>
       <% @robots_in_category.each do |robot| %>
         <div class="col-md-4 mb-4">
-          <%= link_to robot_path(robot) do %>
+          <%= link_to robot_path(robot), class: "text-decoration-none" do %>
             <div class="card shadow-sm rounded" data-robot-name="<%= robot.robot_name %>">
-              <%= cl_image_tag(robot.robot_pictures, width: 200, height: 330, crop: :fill, class: "card-img-top") %>
+              <%= cl_image_tag(robot.robot_pictures, width: 170, height: 300, class: "card-img-top rounded") %>
               <div class="text-center">
                 <h3><%= robot.robot_name %></h3>
               </div>
@@ -19,7 +17,7 @@
       <% end %>
     <% end %>
   </div>
-  <div class="card" style="width: 40%; height: 800px;"
+  <div class="card-map" style="width: 50%; height: 700px;"
     data-controller="map"
     data-map-markers-value="<%= @markers.to_json %>"
     data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">

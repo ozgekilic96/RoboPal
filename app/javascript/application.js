@@ -3,4 +3,4 @@ import "@hotwired/turbo-rails"
 import "controllers"
 import "@popperjs/core"
 import "bootstrap"
-import 'custom/info_window';
+// import 'custom/info_window';
