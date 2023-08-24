@@ -1,0 +1,24 @@
+
+<%= render "shared/navbar" %>
+
+<div class="background-image">
+  <div class="tagline">
+    <h2 class="readable-font">Robots that Care, Assist, and Transform Your Life.</h2>
+  </div>
+
+  <div class="sidebar">
+    <div class="sidebar-text">
+      <div class="see-all"><%= link_to "ALL ROBOTS", robots_path %>
+      </div>
+      <br>
+      <a href="#" class="see-categories">CATEGORIES</a>
+      <div class="subcategories">
+        <%= link_to "HOME", category_robots_path('home') %>
+         <%= link_to "FUN", category_robots_path('fun') %>
+         <%= link_to "WORK", category_robots_path('work') %>
+      </div>
+
+    </div>
+
+  </div>
+</div>

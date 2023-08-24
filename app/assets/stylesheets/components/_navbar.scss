@@ -42,3 +42,13 @@
 .nav-link.button:hover {
   background-color: #4f4e4b; /* Darken the background color on hover */
 }
+.search {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
