@@ -1,15 +1,14 @@
 <%= render "shared/navbar" %>
 
-
 <div class="background-img">
-  <h1 class="text-center mt-5"><%= @category.capitalize %> Robots</h1>
+  <h1 class="text-center"><%= @category.capitalize %> Robots</h1>
   <div class="d-flex justify-content-between">
     <div class="row m-5">
       <% if @robots_in_category.present? %>
         <% @robots_in_category.each do |robot| %>
           <div class="col-md-4 mb-4">
             <%= link_to robot_path(robot), class: "text-decoration-none" do %>
-            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path(robot.robot_pictures, width: 170, height: 300) %>)">
+            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/ddfjqexgw/image/upload/v1692905976/<%= robot.robot_pictures %>)">
               <%= robot.robot_name %>
             </div>
           <% end %>
