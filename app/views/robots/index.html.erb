@@ -1,1 +1,11 @@
 <%= render "shared/navbar" %>
+<h1 class="text-center mt-5">Robots</h1>
+<div class="cards">
+  <% @robots.each do |robot| %>
+    <%= link_to robot_path(robot), class: "text-decoration-none" do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path(robot.robot_pictures, width: 170, height: 300) %>)">
+        <%= robot.robot_name %>
+      </div>
+    <% end %>
+  <% end %>
+</div>
