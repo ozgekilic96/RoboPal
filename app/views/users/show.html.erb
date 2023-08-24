@@ -1,34 +1,24 @@
+
 <%= render "shared/navbar" %>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md-2">
-        <img src="https://images.unsplash.com/photo-1535378620166-273708d44e4c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1557&q=80" alt="ulrich photo" class="rounded-circle" width= 150px>
-      </div>
+<div class="profile-container">
+  <img src="https://images.unsplash.com/photo-1535378620166-273708d44e4c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1557&q=80" alt="ulrich photo" class="rounded-circle" width="250px" ml-3>
 
-      <div class="col-md-8 text-center mt-4">
-        <h2>Hello, <%= @user.first_name %> <%= @user.last_name %></h2>
-      </div>
-  </div>
+  <div class="card-profile">
+    <h3 class="name">Welcome  <%= @user.first_name.capitalize %> <%= @user.last_name.capitalize %> !</h3>
 
-  <div class="container">
-    <h3 class="mt-5">My Robots</h3>
-    <div class="row">
-      <% @robots.each do |robot| %>
-        <div class="col-md-4">
-          <div class="card mb-4">
-            <%= cl_image_tag(robot.robot_pictures, width:400, height:400, crop: :fill)%>
-            <div class="card-body">
-              <h5 class="card-title"><%= link_to robot.robot_name, robot_path(robot) %></h5>
-            </div>
+    <h3 class="name"> <strong>My Bookings </strong></h3>
+    <ul>
+      <% @user.bookings.each do |booking| %>
+        <p class="booking-item">
+          <div class="booking-card">
+           <h5> <%= booking.robot.robot_name %>
+            <span class="remove"> <%= link_to "X", booking_path(booking),data: { turbo_method: :delete}, class: "remove-link" %> </span>
+           </h5>
+            <p><strong>Start: </strong> <%= booking.start_date %> </p>
+            <p><strong>Return: </strong><%= booking.return_date %>  </p>
           </div>
-        </div>
+        </p>
       <% end %>
-    </div>
+    </ul>
   </div>
-  <h3>My Bookings</h3>
-  <ul>
-    <% @user.bookings.each do |booking|%>
-      <%= booking.start_date %>
-    <% end %>
-  </ul>
 </div>
