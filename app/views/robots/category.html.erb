@@ -5,7 +5,7 @@
       <% @robots.each do |robot| %>
         <div class="col-md-4 mb-4">
           <div class="card d-flex border border-dark" style="width: 265px;"> <!-- Set the width to match the image width -->
-            <%= image_tag("party.jpg", width: 265, height: 300, class: "card-img-left") %>
+            <%= cl_image_tag(robot.robot_pictures, width: 170, height: 300, class: "card-img-top rounded") %>
             <div class="card-body">
               <h5 class="card-title"><%= link_to robot.robot_name, robot_path(robot), class: "text-decoration-none" %></h5>
               <p class="card-text"><strong>Features: </strong><%= robot.description %></p>
