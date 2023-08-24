@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'robots#index'
+  root to: 'pages#homepage'
 
   get '/robots/category/:category', to: 'robots#category', as: :category_robots
 

@@ -1,22 +1,25 @@
 <%= render "shared/navbar" %>
-<body class="category-page">
+<h1 class="text-center mt-5"><%= @category.capitalize %> Robots</h1>
+<div class="d-flex justify-content-between">
   <div class="row m-5">
-    <% if @robots.present? %>
-      <% @robots.each do |robot| %>
+    <% if @robots_in_category.present? %>
+      <% @robots_in_category.each do |robot| %>
         <div class="col-md-4 mb-4">
-          <div class="card d-flex border border-dark" style="width: 265px;"> <!-- Set the width to match the image width -->
-            <%= cl_image_tag(robot.robot_pictures, width: 170, height: 300, class: "card-img-top rounded") %>
-            <div class="card-body">
-              <h5 class="card-title"><%= link_to robot.robot_name, robot_path(robot), class: "text-decoration-none" %></h5>
-              <p class="card-text"><strong>Features: </strong><%= robot.description %></p>
-              <p class="card-text"><strong>Price:</strong> $<%= robot.price %></p>
+          <%= link_to robot_path(robot), class: "text-decoration-none" do %>
+            <div class="card shadow-sm rounded" data-robot-name="<%= robot.robot_name %>">
+              <%= cl_image_tag(robot.robot_pictures, width: 170, height: 300, class: "card-img-top rounded") %>
+              <div class="text-center">
+                <h3><%= robot.robot_name %></h3>
+              </div>
             </div>
-          </div>
+          <% end %>
         </div>
       <% end %>
     <% end %>
   </div>
-
-  <div class="card map-card mt-4" style="width: 100%;" data-controller="map" data-map-markers-value="<%= @markers.to_json %>" data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+  <div class="card-map" style="width: 50%; height: 700px;"
+    data-controller="map"
+    data-map-markers-value="<%= @markers.to_json %>"
+    data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
-</body>
+</div>

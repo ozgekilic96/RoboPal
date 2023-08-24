@@ -10,16 +10,20 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
-/* app/assets/stylesheets/application.scss */
+@import "info_window";
 
-/* General styles for all pages */
+body {
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 
-/* Specific styles for category pages */
+.card:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
 body.category-page {
-  /* Add any shared styles for category pages here */
-
   .background-img {
-    /* Your background image styles here */
     background-image: url('your-background-image.jpg');
     background-size: cover;
     background-position: center;
@@ -27,12 +31,7 @@ body.category-page {
   }
 
   .Title h1 {
-    /* Your title styles here */
     font-size: 36px;
     color: black;
   }
-
-  /* ... More specific styles for category pages */
-
-  /* Include any other styles you want for category pages */
 }

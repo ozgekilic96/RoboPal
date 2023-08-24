@@ -11,7 +11,7 @@
     <div class="justify-content-center">
       <%= form_tag robots_path, method: :get do %>
         <%= text_field_tag :search, params[:search], placeholder: 'Search robot name', class: "input-width" %>
-        <%= submit_tag 'Search' %>
+        <%= submit_tag 'Search', class: "search" %>
       <% end %>
     </div>
 
