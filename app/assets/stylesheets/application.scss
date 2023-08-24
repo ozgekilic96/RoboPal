@@ -21,3 +21,17 @@ body {
   transform: scale(1.05);
   transition: transform 0.3s ease;
 }
+
+body.category-page {
+  .background-img {
+    background-image: url('your-background-image.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .Title h1 {
+    font-size: 36px;
+    color: black;
+  }
+}

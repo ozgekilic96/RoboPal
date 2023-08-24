@@ -4,5 +4,21 @@
 @import "form_legend_clear";
 @import "navbar";
 @import "bootstrap"; // Import Bootstrap if needed
+@import "category";
+@import "homepage";
 
-// Custom styles
+
+
+.sidebar-text a:hover {
+  color: #999; /* Grey color on hover */
+}
+
+.subcategories {
+  display: none; /* Hide subcategories by default */
+  margin-top: 5px; /* Adjust margin as needed */
+  font-size: 25;
+}
+
+.sidebar-text:hover .subcategories {
+  display: block; /* Show subcategories on hover */
+}
