@@ -46,16 +46,25 @@
 //   margin-top: 0.5rem;
 // }
 
+
 .card-category:hover {
   transform: translateY(-5px);
   transition: transform 0.3s ease;
 }
 
 .background-img {
- background-image: url(https://img.freepik.com/free-vector/white-technology-background-concept_23-2148403398.jpg?w=2000&t=st=1692892595~exp=1692893195~hmac=531dae58cd5674c54c0c59a2f739e7da107c5f9f2b2aab4a86e8007ee6b0ade2);
+ background-image: url(https://img.freepik.com/free-vector/white-technology-background_23-2148403821.jpg?w=2000&t=st=1692949236~exp=1692949836~hmac=b0cd17c4426a1f234a4da93414d0fd3cc2e7eb67714d1df7251aba19063cd6d5);
  background-size: cover;
  background-repeat: no-repeat;
+ background-position: center;
  height: 100vh;
  position: relative;
 }
 
+.card-map {
+  display: flex;
+  position: center;
+
+
+
+}
