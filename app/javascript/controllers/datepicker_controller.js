@@ -5,7 +5,7 @@ import flatpickr from "flatpickr";
 export default class extends Controller {
   connect() {
     const tomorrow = new Date();
-    tomorrow.setDate(tomorrow.getDate() + 1);
+    tomorrow.setDate(tomorrow.getDate());
 
     flatpickr(this.element, {
       enableTime: true,
