@@ -3,24 +3,35 @@
   <div class="content">
     <h1 class="text-center mt-1"><%= @category.capitalize %> Robots</h1>
     <div class="d-flex justify-content-center">
-      <div class="row m-3">
-        <% if @robots_in_category.present? %>
-          <% @robots_in_category.each do |robot| %>
-            <div class="col-md-4 mb-4">
-              <%= link_to robot_path(robot), class: "text-decoration-none" do %>
-                <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path(robot.robot_pictures, width: 170, height: 300) %>)">
-                  <%= robot.robot_name %>
+      <div class="cards mb-5">
+        <% @robots_in_category.each do |robot| %>
+          <%= link_to new_robot_booking_path(robot), class: "text-decoration-none" do %>
+            <div class="card-trip ">
+              <img src="https://res.cloudinary.com/ddfjqexgw/image/upload/v1692905976/<%= robot.robot_pictures %>" />
+              <div class="card-trip-infos">
+                <div>
+                  <h2><%= robot.robot_name %></h2>
+                  <p><%= robot.description %></p>
                 </div>
-              <% end %>
+                <h2 class="card-trip-pricing">€ <%= robot.price %>/hour</h2>
+              </div>
+              <div class="card-hover-content">
+                <h1>Book Now</h1>
+              </div>
             </div>
           <% end %>
-          <div class="col-md-4 mb-4">
-            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/ddfjqexgw/image/upload/v1692959247/image_msn7un.jpg)">
+        <% end %>
+        <div class="card-trip">
+          <img src="https://res.cloudinary.com/ddfjqexgw/image/upload/v1692959247/image_msn7un.jpg" />
+          <div class="card-trip-infos">
+            <div>
+              <h2>Paint Man</h2>
+              <p>paint your walls and make your house prettier</p>
             </div>
           </div>
-        <% end %>
+        </div>
       </div>
-      <div class="card-map mt-3" style="width: 45%; height: 600px;"
+      <div class="card-map mt-3 mx-5 shadow-lg" style="width: 65%; height: 106vh;"
         data-controller="map"
         data-map-markers-value="<%= @markers.to_json %>"
         data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
