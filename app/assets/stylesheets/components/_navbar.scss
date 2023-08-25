@@ -18,12 +18,13 @@
 }
 
 .logo-image {
-  width: 120px;
+  width: 170px;
 }
 
 .nav-item-active {
   display: inline-block;
   color: white;
+  font-size: 23px;
   text-decoration: none;
   transition: background-color 0.3s, color 0.3s;
   margin-right: 5px;
@@ -42,7 +43,7 @@
 }
 
 .nav-link.button:hover {
-  background-color: #4f4e4b; /* Darken the background color on hover */
+  background-color: #4f4e4b;
 }
 
 .search {
@@ -55,4 +56,6 @@
   text-decoration: none;
   font-size: 14px;
   transition: background-color 0.3s, color 0.3s;
+  margin-bottom: 18px;
+  margin-top: 18px;
 }

@@ -2,7 +2,7 @@
   <div class="d-flex justify-content-between container-fluid">
     <div>
       <%= link_to root_path, class: "navbar-brand" do %>
-        <%= image_tag "Screenshot_1", class: "logo-image" %>
+        <%= image_tag "https://res.cloudinary.com/ddfjqexgw/image/upload/v1692903947/Screenshot_1_new_f8wq1y.jpg", class: "logo-image" %>
       <% end %>
     </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,7 +29,6 @@
           </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Profile", user_path(@user), class: "dropdown-item" %>
-              <%= link_to "Settings", "#", class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
           </li>

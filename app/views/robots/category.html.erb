@@ -1,6 +1,4 @@
 <%= render "shared/navbar" %>
-
-
 <div class="background-img">
   <h1 class="text-center mt-1"><%= @category.capitalize %> Robots</h1>
   <div class="d-flex justify-content-between">
@@ -13,6 +11,9 @@
               <%= robot.robot_name %>
             </div>
           <% end %>
+          <div class="mb-4">
+            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/ddfjqexgw/image/upload/v1692959247/image_msn7un.jpg)">
+            </div>
           </div>
         <% end %>
       <% end %>
@@ -23,4 +24,5 @@
       data-map-markers-value="<%= @markers.to_json %>"
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
+  </div>
 </div>

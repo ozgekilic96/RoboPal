@@ -12,14 +12,20 @@
 @import "pages/index";
 @import "info_window";
 
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.content {
+  padding-top: 85px;
+}
+
 body {
   background-size: cover;
   background-repeat: no-repeat;
-}
-
-.card:hover {
-  transform: scale(1.05);
-  transition: transform 0.3s ease;
 }
 
 body.category-page {
@@ -34,4 +40,15 @@ body.category-page {
     font-size: 36px;
     color: black;
   }
+}
+
+.rounded-img{
+  right: 16px;
+  top: -20px;
+  width: 300px;
+  border-radius: 50%;
+}
+
+h1 {
+  font-family: 'Black Ops One', cursive;
 }

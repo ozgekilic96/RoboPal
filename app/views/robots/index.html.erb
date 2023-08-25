@@ -1,11 +1,23 @@
 <%= render "shared/navbar" %>
-<h1 class="text-center mt-5">Robots</h1>
-<div class="cards">
-  <% @robots.each do |robot| %>
-    <%= link_to robot_path(robot), class: "text-decoration-none" do %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= cl_image_path(robot.robot_pictures, width: 170, height: 300) %>)">
-        <%= robot.robot_name %>
-      </div>
+<div class="content">
+  <h1 class="text-center my-3">Robots</h1>
+  <div class="cards">
+    <% @robots.each do |robot| %>
+      <%= link_to new_robot_booking_path(robot), class: "text-decoration-none" do %>
+        <div class="card-trip">
+          <img src="https://res.cloudinary.com/ddfjqexgw/image/upload/v1692905976/<%= robot.robot_pictures %>" />
+          <div class="card-trip-infos">
+            <div>
+              <h2><%= robot.robot_name %></h2>
+              <p><%= robot.description %></p>
+            </div>
+            <h2 class="card-trip-pricing">€ <%= robot.price %>/hour</h2>
+          </div>
+          <div class="card-hover-content">
+            <h1>Book Now</h1>
+          </div>
+        </div>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>
