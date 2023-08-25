@@ -1,10 +1,10 @@
 class RobotsController < ApplicationController
-
   def index
     @user = current_user
     if params[:search]
-      @robots = Robot.where('LOWER(robot_name) LIKE ?', "%#{params[:search].downcase}%")
-                     .order('robot_name ASC')
+      search_term = params[:search].downcase
+      @robots = Robot.where('LOWER(robot_name) LIKE ? OR LOWER(description) LIKE ?', "%#{search_term}%", "%#{search_term}%")
+                    .order('robot_name ASC')
     else
       @robots = Robot.all
     end
