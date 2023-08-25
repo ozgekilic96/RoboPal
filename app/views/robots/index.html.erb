@@ -1,6 +1,6 @@
 <%= render "shared/navbar" %>
 <div class="content">
-  <h1 class="title-robot text-center my-3">Robots</h1>
+  <h1 class="text-center my-3">Robots</h1>
   <div class="cards">
     <% @robots.each do |robot| %>
       <%= link_to new_robot_booking_path(robot), class: "text-decoration-none" do %>
