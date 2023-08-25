@@ -48,3 +48,26 @@ justify-content: center;
 .form-container input[type="date"]:focus {
   background-color: rgba(255, 255, 255, 0.2);
 }
+.container-signup {
+  background-color: black;
+  color: white;
+  background-image: url('3249250.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  position: relative;
+}
+
+.container-login {
+  background-color: black;
+  color: white;
+  background-image: url('3249250.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  position: relative;
+}
+
+.bg-opacity-40 {
+  margin-top: 170px;
+}
