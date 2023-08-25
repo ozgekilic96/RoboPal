@@ -51,3 +51,11 @@
   transition: color 1s;
   margin-top: 10px;
 }
+
+.video-container {
+  position: absolute;
+  bottom: 0;
+  left: 80%;
+  transform: translateX(-50%);
+}
+
