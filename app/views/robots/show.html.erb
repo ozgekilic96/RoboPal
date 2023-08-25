@@ -3,10 +3,9 @@
   <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
     <div class="robot-card text-center">
       <div class="card-container w-400px">
-        <div class="card ">
-          <h2 class="robot-name"><%= @robot.robot_name %></h2>
-          <%= cl_image_tag(@robot.robot_pictures, width:400, height:400, crop: :fill)%>
-          <p>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/ddfjqexgw/image/upload/v1692905976/<%= @robot.robot_pictures %>)">
+          <%= @robot.robot_name %>
+        </div>
             <strong>Description:</strong> <%= @robot.description %>
           </p>
           <p>

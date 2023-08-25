@@ -1,32 +1,26 @@
-
 <%= render "shared/navbar" %>
-
 <div class="background-image">
-  <div class="tagline">
-    <h2 class="readable-font">Robots that Care, Assist, and Transform Your Life.</h2>
-     <h5 class="readable-font">We have a variety of robots that can be rented to fulfill all sorts of tasks or events.</h5>
-         <h5 class="readable-font">be it for Work, Home or even for Fun. The future is here, so check out each category!! </h5>
-  </div>
-
-
+  <div class="content">
+    <div class="tagline">
+      <h2 class="readable-font">Robots that Care, Assist, and Transform Your Life</h2>
+      <h6 class="readable-font px-2">   We have a variety of robots that can be rented to fulfill all sorts of tasks or events,  </h6>
+          <h6 class="readable-font px-2">   be it for Work, Home or even for Fun. The future is here, so check out each category!! </h6>
+    </div>
     <div class="video-container">
       <!-- Embed the YouTube video -->
       <iframe width="560" height="315" src="https://www.youtube.com/embed/bAdqazixuRY" frameborder="0" allowfullscreen></iframe>
     </div>
-
-  <div class="sidebar">
-    <div class="sidebar-text">
-      <div class="see-all"><%= link_to "ALL ROBOTS", robots_path %>
+    <div class="sidebar mt-5">
+      <div class="sidebar-text">
+        <div class="see-all"><%= link_to "ALL ROBOTS", robots_path %>
+        </div>
+        <a href="#" class="see-categories">CATEGORIES</a>
+        <div class="subcategories">
+          <%= link_to "HOME", category_robots_path('home') %>
+          <%= link_to "FUN", category_robots_path('fun') %>
+          <%= link_to "WORK", category_robots_path('work') %>
+        </div>
       </div>
-      <br>
-      <a href="#" class="see-categories">CATEGORIES</a>
-      <div class="subcategories">
-        <%= link_to "HOME", category_robots_path('home') %>
-         <%= link_to "FUN", category_robots_path('fun') %>
-         <%= link_to "WORK", category_robots_path('work') %>
-      </div>
-
     </div>
-
   </div>
 </div>

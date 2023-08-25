@@ -12,14 +12,20 @@
 @import "pages/index";
 @import "info_window";
 
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.content {
+  padding-top: 95px;
+}
+
 body {
   background-size: cover;
   background-repeat: no-repeat;
-}
-
-.card:hover {
-  transform: scale(1.05);
-  transition: transform 0.3s ease;
 }
 
 body.category-page {
@@ -34,4 +40,41 @@ body.category-page {
     font-size: 36px;
     color: black;
   }
+}
+
+.rounded-img{
+  right: 16px;
+  top: -20px;
+  width: 300px;
+  border-radius: 50%;
+}
+
+.footer {
+  background: rgba(4, 4, 4, 0.97);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 28px;
+  padding:6px 6px;
+  color: rgba(255, 254, 254, 0.3);
+}
+.footer-links {
+  display: flex;
+  align-items: center;
+}
+.footer-links a {
+  color: rgb(255, 255, 255);
+  opacity: 0.15;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 0px 10px;
+}
+.footer-links a:hover {
+  opacity: 1;
+}
+.footer .fa-heart {
+  color: #D23333;
+}
+h1 {
+  font-family: 'Black Ops One', cursive;
 }
