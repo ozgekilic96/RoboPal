@@ -6,7 +6,7 @@
       <div class="cards mb-5">
         <% @robots_in_category.each do |robot| %>
           <%= link_to new_robot_booking_path(robot), class: "text-decoration-none" do %>
-            <div class="card-trip ">
+            <div data-info-cards-value="" class="card-trip ">
               <img src="https://res.cloudinary.com/ddfjqexgw/image/upload/v1692905976/<%= robot.robot_pictures %>" />
               <div class="card-trip-infos">
                 <div>
